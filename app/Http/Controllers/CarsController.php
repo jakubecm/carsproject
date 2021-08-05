@@ -59,13 +59,21 @@ class CarsController extends Controller {
      * @param int $id
      * @param int $id
      * @return Application|Factory|View|\Illuminate\Http\Response
- *
-* public function show($id) {
-        * //
-    * }
- *
-* /**
-     * Show the form for editing the specified resource.
+     */
+
+ public function show($id) {
+
+     $car = Car::find($id);
+
+     return view('cars.show')->with('car', $car);
+
+
+ }
+
+
+
+
+/**     * Show the form for editing the specified resource.
      *
      * @return \Illuminate\Http\Response
      */
